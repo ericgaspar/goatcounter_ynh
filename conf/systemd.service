@@ -7,7 +7,7 @@ Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__FINALPATH__/
-ExecStart=__FINALPATH__/goatcounter serve
+ExecStart=__FINALPATH__/ ./goatcounter serve -listen 127.0.0.1:__PORT__ -automigrate -tls none -db __FINALPATH__/db/goatcounter.sqlite3
 
 [Install]
 WantedBy=multi-user.target
