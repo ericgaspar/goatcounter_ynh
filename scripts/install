@@ -121,7 +121,7 @@ chmod 400 "$final_path/.env"
 chown $app:$app "$final_path/.env"
 
 pushd "$final_path"
-	goatcounter create -domain $stats_domain -email $email -createdb
+	./goatcounter create -domain $stats_domain -email $email -createdb
 popd
 
 #=================================================
