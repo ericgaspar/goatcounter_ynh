@@ -35,10 +35,12 @@
                 "type": "domain"
             },
             {
-                "name": "path",
-                "type": "path",
-                "example": "/example",
-                "default": "/example"
+                "name": "stats_domain",
+                "type": "string"
+            },
+            {
+                "name": "admin",
+                "type": "user"
             },
             {
                 "name": "is_public",
