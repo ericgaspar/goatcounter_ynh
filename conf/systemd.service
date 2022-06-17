@@ -6,7 +6,10 @@ After=network.target
 Type=simple
 User=__APP__
 Group=__APP__
-ExecStart=goatcounter serve -db sqlite3://db/goatcounter.sqlite3 -listen :__PORT__ -tls none
+WorkingDirectory=__FINALPATH__/
+ExecStart=__FINALPATH__ goatcounter serve -listen 127.0.0.1:__PORT__ -automigrate -tls none -db __FINALPATH__/db/goatcounter.sqlite3
+
+#goatcounter serve -db sqlite3://db/goatcounter.sqlite3 -listen :__PORT__ -tls none
 
 [Install]
 WantedBy=multi-user.target
