@@ -1,0 +1,7 @@
+SOURCE_URL=https://github.com/arp242/goatcounter/releases/download/v2.2.3/goatcounter-dev-linux-amd64.gz
+SOURCE_SUM=0548a529ecd564915a8b8058674ea3e59e12d9dea9fd3717960d3bec09ae46d6
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=tar.gz
+SOURCE_IN_SUBDIR=false
+SOURCE_FILENAME=goatcounter
+SOURCE_EXTRACT=false
