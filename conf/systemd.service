@@ -1,15 +1,12 @@
 [Unit]
 Description=GoatCounter
-After=network.target
 
 [Service]
 Type=simple
-User=__APP__
-Group=__APP__
-WorkingDirectory=__FINALPATH__/
-ExecStart=__FINALPATH__ goatcounter serve -listen 127.0.0.1:__PORT__ -automigrate -tls none -db __FINALPATH__/db/goatcounter.sqlite3
-
-#goatcounter serve -db sqlite3://db/goatcounter.sqlite3 -listen :__PORT__ -tls none
+# If anything unexpected happens, Systemd will try to restart the program
+Restart=always
+# We need to send the absolute path of the database to GoatCounter.
+ExecStart=__FINALPATH__ goatcounter serve -db sqlite3://__FINALPATH__/db/goatcounter.sqlite3 -listen :__PORT__ -tls none
 
 [Install]
 WantedBy=multi-user.target
